@@ -37,9 +37,26 @@ jobs:
         kubectl apply -f cluster-autoscaler.yaml
         kubectl apply -f public-lb.yaml
     
-    - name: EKS Pod  status
+    # - name: EKS Pod  status
+    #   run: |
+    #     kubectl get pods --all-namespaces -o wide
+
+
+    - name: Get Pod Name
+      id: get_pod_name
       run: |
-        kubectl get pods --all-namespaces -o wide
+          POD_NAME=$(kubectl get pods -l hello-app -o jsonpath='{.items[0].metadata.name}')
+          echo "Pod name is $POD_NAME"
+          echo "POD_NAME=$POD_NAME" >> $GITHUB_ENV
+
+    - name: Health Check
+      run: |
+        POD_NAME=$POD_NAME
+        kubectl port-forward pod/$POD_NAME 8080:80 &
+        sleep 5  # Give time for port-forward to start
+        curl http://localhost:8080/health
+        pkill -f "kubectl port-forward"
+        
         
         
 
