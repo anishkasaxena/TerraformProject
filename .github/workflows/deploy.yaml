@@ -1,0 +1,22 @@
+name: Terraform Apply
+
+on:
+    workflow_dispatch:
+
+jobs:
+  terraform_apply:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name : Kubernetes Apply deployment
+      run: |
+        kubectl apply -f deployment.yaml 
+        kubectl apply -f public-lb.yaml
+        kubectl apply -f cluster-autoscaler.yaml
+    
+    - name : Check pods
+      run: |
+        kubectl get pods -n kube-system

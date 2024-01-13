@@ -1,9 +1,7 @@
 name: Terraform Apply
 
 on:
-  push:
-    branches:
-      - master
+    workflow_dispatch:
 
 jobs:
   terraform_apply:
@@ -29,14 +27,5 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve
 
-    - name : Kubernetes Apply deployment
-      run: |
-        kubectl apply -f deployment.yaml 
-        kubectl apply -f public-lb.yaml
-        kubectl apply -f cluster-autoscaler.yaml
     
-    - name : Check pods
-      run: |
-        kubectl get pods -n kube-system
-
         
