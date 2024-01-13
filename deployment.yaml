@@ -1,12 +1,9 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-app
-  labels:
-    app: hello-app
+  name: hello-app-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: hello-app
@@ -20,17 +17,15 @@ spec:
         image: anishka012/hello_app:latest
         ports:
         - containerPort: 80
-      readinessProbe:
-        httpGet:
-          path: /healthz
-          port: 80
-        initialDelaySeconds: 5
-        periodSeconds: 10
-        timeoutSeconds: 5
-      livenessProbe:
-        httpGet:
-          path: /healthz
-          port: 80
-        initialDelaySeconds: 10
-        periodSeconds: 15
-        timeoutSeconds: 8
+        livenessProbe:
+          httpGet:
+            path: /healthz   
+            port: 80
+          periodSeconds: 15  
+          timeoutSeconds: 5   
+        readinessProbe:
+          httpGet:
+            path: /readiness   
+            port: 80
+          periodSeconds: 10    
+          timeoutSeconds: 3     
