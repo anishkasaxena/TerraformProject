@@ -19,8 +19,7 @@ jobs:
       run: terraform init
 
     - name: Debug Terraform State
-      run: cat terraform.tfstate
-
+      run: ls -al
 
     - name: Terraform Destroy
       run: |
