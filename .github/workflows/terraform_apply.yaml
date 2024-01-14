@@ -26,10 +26,13 @@ jobs:
     - name: List Files in Working Directory
       run: |
             ls -la
-            pwd
-    - name: Terraform Apply
-      run: terraform apply -auto-approve
-   
+            
+    # - name: Terraform Apply
+    #   run: terraform apply -auto-approve
+    - name: Terraform Destroy
+      run: |
+        cd ${{ env.TERRAFORM_CLI_PATH }}
+        terraform destroy -auto-approve
     # - name: Terraform Apply
     #   run: terraform destroy -auto-approve
     
