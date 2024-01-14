@@ -27,6 +27,7 @@ jobs:
     - name: Debugging Step
       run: |
           cd ~
+          cd runners
           ls -al
        
 
