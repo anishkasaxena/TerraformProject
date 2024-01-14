@@ -38,8 +38,10 @@ jobs:
         # echo "Path to /home/runner/work_temp/ae525391-367f-4d34-8658-8433ad803d83/terraform-bin/terraform-bin: /home/runner/work_temp/ae525391-367f-4d34-8658-8433ad803d83/terraform-bin/terraform-bin"
         - name: Change Directory and Destroy
           run: |
-            cd /home/runner/work_temp/ae525391-367f-4d34-8658-8433ad803d83/terraform-bin/terraform-bin
-            terraform destroy -auto-approve
+            cd ~
+            ls
+            # cd home/runner/work_temp/ae525391-367f-4d34-8658-8433ad803d83/terraform-bin/terraform-bin
+            # terraform destroy -auto-approve
 
 
         #   cd ~
