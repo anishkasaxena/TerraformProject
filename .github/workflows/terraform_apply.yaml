@@ -26,7 +26,7 @@ jobs:
     - name: List Files in Working Directory
       run: |
             ls -la
-            cd home/runner/work/_temp
+            cd home/runner/work
             ls -la
     - name: Terraform Apply
       run: terraform apply -auto-approve
