@@ -23,9 +23,9 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
-    - name: List Files in Working Directory
-      run: |
-            ls -la
+    # - name: List Files in Working Directory
+    #   run: |
+    #         ls -la
             
     # - name: Terraform Apply
     #   run: terraform apply -auto-approve
@@ -33,6 +33,7 @@ jobs:
       run: |
 
           cd ~
+          cd runner
           ls -al
         #   cd home/runner/work/TerraformProject/TerraformProject
         #   ls -al
