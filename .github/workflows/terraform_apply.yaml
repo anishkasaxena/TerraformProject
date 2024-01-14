@@ -28,6 +28,7 @@ jobs:
       run: |
           cd ~
           cd runners
+          cd runner
           ls -al
        
 
