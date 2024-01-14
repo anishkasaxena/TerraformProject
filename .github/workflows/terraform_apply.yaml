@@ -27,8 +27,8 @@ jobs:
     - name: Debugging Step
       run: |
           cd ~
-          cd runners
-          cd runner
+          cd TERRAFORM_CLI_PATH
+          # cd runner
           ls -al
        
 
