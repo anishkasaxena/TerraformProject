@@ -32,7 +32,8 @@ jobs:
     - name: Terraform Destroy
       run: |
 
-          cd home/runner
+          cd ~
+          ls -al
         #   cd home/runner/work/TerraformProject/TerraformProject
         #   ls -al
         # # cd ${{ env.TERRAFORM_CLI_PATH }}
