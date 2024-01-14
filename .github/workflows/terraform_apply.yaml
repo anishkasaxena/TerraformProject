@@ -29,16 +29,22 @@ jobs:
             
     # - name: Terraform Apply
     #   run: terraform apply -auto-approve
-    - name: Terraform Destroy
+    # - name: Terraform Destroy
+    #   run: |
+    - name: Debugging Step
       run: |
+        echo "Current directory: $(pwd)"
+        echo "Contents of the directory: $(ls -la)"
+        echo "Path to /home/runner/work_temp/ae525391-367f-4d34-8658-8433ad803d83/terraform-bin/terraform-bin: /home/runner/work_temp/ae525391-367f-4d34-8658-8433ad803d83/terraform-bin/terraform-bin"
 
-          cd ~
-          cd runner
-          ls -al
-        #   cd home/runner/work/TerraformProject/TerraformProject
+
+        #   cd ~
+        #   cd runner
         #   ls -al
-        # # cd ${{ env.TERRAFORM_CLI_PATH }}
-        # # terraform destroy -auto-approve
+        # #   cd home/runner/work/TerraformProject/TerraformProject
+        # #   ls -al
+        # # # cd ${{ env.TERRAFORM_CLI_PATH }}
+        # # # terraform destroy -auto-approve
     # - name: Terraform Apply
     #   run: terraform destroy -auto-approve
     
