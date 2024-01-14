@@ -31,10 +31,12 @@ jobs:
     #   run: terraform apply -auto-approve
     - name: Terraform Destroy
       run: |
-          cd home/runner/work/TerraformProject/TerraformProject
-          ls -al
-        # cd ${{ env.TERRAFORM_CLI_PATH }}
-        # terraform destroy -auto-approve
+
+          cd home/runner
+        #   cd home/runner/work/TerraformProject/TerraformProject
+        #   ls -al
+        # # cd ${{ env.TERRAFORM_CLI_PATH }}
+        # # terraform destroy -auto-approve
     # - name: Terraform Apply
     #   run: terraform destroy -auto-approve
     
