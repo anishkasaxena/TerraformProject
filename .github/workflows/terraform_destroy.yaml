@@ -18,6 +18,10 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
+    - name: Debug Terraform State
+      run: cat terraform.tfstate
+
+
     - name: Terraform Destroy
       run: |
         cd ${{ env.TERRAFORM_CLI_PATH }}
